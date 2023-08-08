@@ -20,9 +20,9 @@ let keys = {
 }
 
 class Sprite {
-    constructor({position}){
+    constructor({position, Image}){
         this.position = position
-        this.image = document.createElement('img')
+        this.image = new Image()
         this.image.src = '/BitcoinBobby/img/Level3.png'
     }
     draw(){
