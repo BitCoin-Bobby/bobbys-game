@@ -19,6 +19,24 @@ let keys = {
     }
 }
 
+class Sprite {
+    constructor({position}){
+        this.position = position
+        this.image = document.createElement('img')
+        this.image.src = '/BitcoinBobby/img/Level3.png'
+    }
+    draw(){
+        ctx.drawImage(this.image, this.position.x, this.position.y)
+    }
+}
+
+const backgroundStart = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    }
+})
+
 class Player {
     constructor(){
         this.gravity = 1
@@ -61,8 +79,10 @@ let player = new Player()
 
 const animate = () => {
     window.requestAnimationFrame(animate)
-    ctx.fillStyle = 'white'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    // ctx.fillStyle = 'white'
+    // ctx.fillRect(0, 0, canvas.width, canvas.height)
+    
+    backgroundStart.draw()
     
     player.velocity.x = 0
     if(keys.d.pressed) player.velocity.x = 5
