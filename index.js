@@ -19,9 +19,6 @@ let keys = {
     }
 }
 
-// let image = new Image(100, 100)
-// console.log(image)
-
 class Sprite {
     constructor({position, src}){
         this.position = position;
@@ -32,14 +29,6 @@ class Sprite {
         ctx.drawImage(this.image, this.position.x, this.position.y, canvas.width, canvas.height)
     }
 }
-
-const background = new Sprite({
-    position: {
-        x: 0,
-        y: 0
-    },
-    src: './images/background1.jpg'
-})
 
 class Player {
     constructor(){
@@ -79,7 +68,14 @@ class Player {
     }
 }
 
-let player = new Player()
+const player = new Player()
+const background = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    },
+    src: './images/background1.jpg'
+})
 
 const animate = () => {
     window.requestAnimationFrame(animate)
