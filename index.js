@@ -35,6 +35,9 @@ class Sprite {
         if(!this.loaded) return
         ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
     }
+    update(){
+        this.draw()
+    }
 }
 class Player {
     constructor(){
